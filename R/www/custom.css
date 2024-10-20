@@ -1,0 +1,60 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=MedievalSharp&display=swap');
+
+/* Variables */
+:root {
+    --footer-height: 80px;
+    --search-bar-height: 60px;
+    --off-white: #faebd7;
+    --grey: #666;
+    --off-dark: #111;
+    --mid-dark: #222;
+    --light-dark: #333;
+    --highlight: #BABA45;
+    --highlight-secondary: red;
+    --toggle-layer-panel-button-width: 40px;
+    --left-panels-width: 500px;
+    --font-normal: 'Lato', sans-serif;
+    --font-fancy: 'MedievalSharp', cursive;
+}
+
+body, .content-wrapper {
+    color: white;
+    font-family: var(--font-normal); /* Use normal font for body */
+}
+
+/* Apply fancy font to the dashboard header title */
+.main-header .logo {
+  font-family: var(--font-fancy);
+  font-size: 24px;
+}
+
+.body {
+    background-color: black; /* Set background for the main content area */
+}
+
+.content-wrapper {
+    background-color: darkslategrey; /* Set background for the main content area */
+}
+
+/* Style for all headers to use the fancy font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fancy); /* Use fancy font for headers */
+}
+
+/* Style for links to be blue and open in a new tab */
+a {
+    color: #1E90FF; /* DodgerBlue color for links */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #00BFFF; /* DeepSkyBlue color for links on hover */
+}
+
+/* Make the map and its container take full height of the viewport */
+html, body, .leaflet-container, .row, .container-fluid {
+    height: 100vh; /* 100% of the viewport height */
+    margin: 0;
+    padding: 0;
+}
