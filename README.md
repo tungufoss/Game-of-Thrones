@@ -20,7 +20,8 @@ Before running the _Shiny_ app, you need the following:
     ```
 2. **Environment Variables:** 
 
-    In the root directory of this repository, create a `.env` file with your PostgreSQL connection details. The app requires this file to securely connect to the database.
+    In the `R/` directory of this repository, create a `.env` file with your PostgreSQL 
+   connection details. The app requires this file to securely connect to the database.
     
     Example `.env` file:
     ```bash
@@ -43,16 +44,18 @@ Before running the _Shiny_ app, you need the following:
 ### Running the Application
 1. **Navigate to the project directory:**
 
-    After cloning the repository, stay on the root directory of the project where the `.env` file is located:
-    ```
-    cd Game-of-Thrones/
+    After cloning the repository, navigate to the `R/` directory where the Shiny app is located 
+   along with the `.env` file:
+
+    ``` bash
+    cd R/
     ```
 2. **Run the Shiny Application:**
 
     To run the Shiny application, execute the following command in your terminal:
 
     ```bash
-    Rscript -e "shiny::runApp('R/', port = 8080)"
+    Rscript -e "shiny::runApp('.', port = 8080)"
     ```
     This will start the Shiny app on port 8080. 
     You can access it in your web browser at http://localhost:8080.
@@ -64,6 +67,7 @@ The following is the expected folder structure for the project:
 Game-of-Thrones/
 │
 ├── R/                            # Directory containing the Shiny app code
+│   ├── .env                      # Environment file for PostgreSQL credentials (not included in the repository)
 │   ├── ui.R                      # Shiny UI definition
 │   ├── server.R                  # Shiny server logic
 │   ├── global.R                  # Global definitions for database connections
@@ -73,7 +77,6 @@ Game-of-Thrones/
 ├── www/                          # Static assets (e.g., custom CSS, images)
 │   └── custom.css                # Custom CSS for styling the app
 │
-├── .env                          # Environment file for PostgreSQL credentials
 └── README.md                     # Project documentation (this file)
 ```
 
