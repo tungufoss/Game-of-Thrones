@@ -10,11 +10,19 @@ Before running the _Shiny_ app, you need the following:
 - _PostgreSQL_ database with the necessary credentials
 
 ### Setup
-1. Environment Variables: 
+1. **Clone the repository:**
 
-    In the root directory of this repository, create a .env file with your PostgreSQL connection details. The app requires this file to securely connect to the database.
+    First, clone the repository to your local machine:
+
+    ```bash
+    git clone git@github.com:tungufoss/Game-of-Thrones.git
+    cd Game-of-Thrones
+    ```
+2. **Environment Variables:** 
+
+    In the root directory of this repository, create a `.env` file with your PostgreSQL connection details. The app requires this file to securely connect to the database.
     
-    Example .env file:
+    Example `.env` file:
     ```bash
     PGHOST=your_postgresql_host
     PGPORT=your_postgresql_port
@@ -24,7 +32,7 @@ Before running the _Shiny_ app, you need the following:
     ```
     Replace the placeholders with your actual PostgreSQL credentials.
 
-2. Install Required R Packages
+3. **Install Required R Packages:**
 
     Ensure that all necessary R packages are installed:
 
@@ -33,13 +41,21 @@ Before running the _Shiny_ app, you need the following:
     ```
 
 ### Running the Application
-To run the Shiny application, execute the following command in your terminal:
+1. **Navigate to the project directory:**
 
-```bash
-Rscript -e "shiny::runApp('~/dev/IDN302G/Game-of-Thrones/R/', port = 8080)"
-```
-This will start the Shiny app on port 8080. 
-You can access it in your web browser at http://localhost:8080.
+    After cloning the repository, stay on the root directory of the project where the `.env` file is located:
+    ```
+    cd Game-of-Thrones/
+    ```
+2. **Run the Shiny Application:**
+
+    To run the Shiny application, execute the following command in your terminal:
+
+    ```bash
+    Rscript -e "shiny::runApp('R/', port = 8080)"
+    ```
+    This will start the Shiny app on port 8080. 
+    You can access it in your web browser at http://localhost:8080.
 
 ## Folder Structure
 The following is the expected folder structure for the project:
