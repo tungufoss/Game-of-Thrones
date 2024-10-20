@@ -9,6 +9,7 @@ dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("Info Map", tabName = "info_map", icon = icon("map")),
+      menuItem("Pedigree Tree", tabName = "pedigree", icon = icon("tree")),
       menuItem("Sources & Licensing", tabName = "sources", icon = icon("book"))
     )
   ),
@@ -51,7 +52,13 @@ dashboardPage(
               )
       ),
 
-      # Second tab: Sources and Licensing
+      # Second tab: Pedigree Tree
+      tabItem(tabName = "pedigree",
+              h2("Game of Thrones Pedigree Tree"),
+              plotOutput("family_tree_plot")  # Placeholder for the family tree plot
+      ),
+
+      # Third tab: Sources and Licensing
       tabItem(tabName = "sources",
               h2("Sources & Licensing"),
               htmlOutput("sources_info")  # Placeholder for dynamically generated HTML

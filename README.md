@@ -38,7 +38,8 @@ Before running the _Shiny_ app, you need the following:
     Ensure that all necessary R packages are installed:
 
     ```R
-    install.packages(c("shiny", "leaflet", "RPostgres", "sf", "dotenv"))
+    install.packages(c("tidyverse", "RPostgres", "dotenv", "shiny", "leaflet", "sf", 
+   "shinydashboard", "kinship2"))
     ```
 
 ### Running the Application

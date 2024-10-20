@@ -39,6 +39,10 @@ kingdom_data <- dbGetQuery(con, "SELECT * FROM shiny.kingdoms") %>%
 house_data <- dbGetQuery(con, "SELECT * FROM shiny.houses") %>%
   st_as_sf(wkt = "geom_wkt", crs = 4326)
 
+# Query for pedigree data
+pedigree_data <- dbGetQuery(con, "SELECT * FROM shiny.pedigree")
+
+
 # Create custom icons for each house
 house_icons <- icons(
   iconUrl = ~coat_of_arms_url,  # URL for the custom icon
