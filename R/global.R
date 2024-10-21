@@ -40,8 +40,11 @@ house_data <- dbGetQuery(con, "SELECT * FROM shiny.houses") %>%
   st_as_sf(wkt = "geom_wkt", crs = 4326)
 
 # Query for pedigree data
-pedigree_data <- dbGetQuery(con, "SELECT * FROM shiny.pedigree")
+pedigree_data <- dbGetQuery(con, "SELECT * FROM shiny.pedigree") %>%
+  group_by(id, label, sex, dad_id, mom_id, spouse_id) %>%
+  summarise(fam_ids  = list(fam_id))
 
+pedigree_relations <- dbGetQuery(con, "SELECT * FROM got.character_dynasties")
 
 # Create custom icons for each house
 house_icons <- icons(

@@ -55,6 +55,30 @@ dashboardPage(
       # Second tab: Pedigree Tree
       tabItem(tabName = "pedigree",
               h2("Game of Thrones Pedigree Tree"),
+              selectInput(
+                inputId = "dynasty",                      # The input ID to refer to in the server logic
+                label = "Select Dynasty",                 # The label for the dropdown
+                choices = c(
+                  "(All Dynasties)" = 0,                  # Default option to show all dynasties
+                  "Stark" = 1,
+                  "Targaryen" = 2,
+                  "Baratheon" = 3,
+                  "Lannister" = 4,
+                  "Greyjoy" = 5,
+                  "Martell" = 6,
+                  "Tyrell" = 7,
+                  "Westerling" = 8,
+                  "Velaryon" = 9,
+                  "Spicer" = 10,
+                  "Frey" = 11,
+                  "Hoare" = 12,
+                  "Seaworth" = 13,
+                  "Mudd" = 14,
+                  "Gardener" = 15
+                ),
+                selected = 0,                             # Default selection (Stark)
+                multiple = FALSE                          # Single selection only
+              ),
               plotOutput("family_tree_plot")  # Placeholder for the family tree plot
       ),
 
